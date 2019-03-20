@@ -35,7 +35,7 @@ export class EmployeComponent implements OnInit {
       ville: '',
       adresse: '',
       image: ''
-    };
+    }
   }
 
 
