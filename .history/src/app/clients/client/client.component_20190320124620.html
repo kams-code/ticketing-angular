@@ -1,0 +1,53 @@
+<form #form="ngForm" (submit)="onSubmit(form)" enctype="multipart/form-data" autocomplete="off">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  <div class="form-group">
+    <label>Nom</label>
+    <input name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" class="form-control" required>
+    <div class="validation-error" *ngIf="nom.invalid && nom.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Prénom</label>
+    <input name="prenom" #prenom="ngModel" [(ngModel)]="service.formData.prenom" class="form-control" required>
+    <div class="validation-error" *ngIf="prenom.invalid && prenom.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" required>
+    <div class="validation-error" *ngIf="email.invalid && email.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Téléphone</label>
+    <input type="number" name="telephone" #telephone="ngModel" [(ngModel)]="service.formData.telephone" class="form-control" required>
+    <div class="validation-error" *ngIf="telephone.invalid && telephone.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Pays</label>
+    <input name="pays" #pays="ngModel" [(ngModel)]="service.formData.pays" class="form-control" required>
+    <div class="validation-error" *ngIf="pays.invalid && pays.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Ville</label>
+    <input name="ville" #ville="ngModel" [(ngModel)]="service.formData.ville" class="form-control" required>
+    <div class="validation-error" *ngIf="ville.invalid && ville.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Adresse</label>
+    <input name="adresse" #adresse="ngModel" [(ngModel)]="service.formData.adresse" class="form-control" required>
+    <div class="validation-error" *ngIf="adresse.invalid && adresse.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="file" name="image" #image="ngModel" [(ngModel)]="service.formData.image" class="form-control" required>
+    <div class="validation-error" *ngIf="image.invalid && image.touched">This field is required.</div>
+  </div>
+
+
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Save changes</button>
+  </div>
+</form>
