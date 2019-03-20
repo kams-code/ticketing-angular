@@ -9,7 +9,7 @@ import { BeforeLoginService } from './services/before-login.service';
 import { AfterLoginService } from './services/after-login.service';
 import { UsersComponent } from './users/users.component';
 import { ClientsComponent } from './clients/clients.component';
-import { ClientListComponent} from './clients/client-list/client-list.component';
+import { ClientListeComponent} from .''
 import { ServicesComponent } from './services/services.component';
 import { RequetesComponent } from './requetes/requetes.component';
 import { DiscussionsComponent } from './discussions/discussions.component';
@@ -55,7 +55,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'clientListe',
-    component: ClientListComponent,
+    component: ClientListeComponent,
     canActivate: [AfterLoginService]
   },
   {

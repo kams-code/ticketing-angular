@@ -55,7 +55,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'clientListe',
-    component: ClientListComponent,
+    component: ClientListeComponent,
     canActivate: [AfterLoginService]
   },
   {

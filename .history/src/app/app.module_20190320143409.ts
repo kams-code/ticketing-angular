@@ -49,8 +49,6 @@ import { EmployesComponent } from './employes/employes.component';
 import { EmployeComponent } from './employes/employe/employe.component';
 import { EmployeListComponent } from './employes/employe-list/employe-list.component';
 import { RoleService } from './roles/shared/role.service';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
@@ -90,8 +88,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     EmployesComponent,
     EmployeComponent,
     EmployeListComponent,
-    ToolbarComponent,
-    SidebarComponent
+    
 
   ],
   imports: [
