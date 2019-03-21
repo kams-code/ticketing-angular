@@ -37,8 +37,8 @@
 
                 <a class="nav-link ripple with-arrow collapsed" data-toggle="collapse" data-target="#collapse-dashboards" href="#" aria-expanded="false" aria-controls="collapse-dashboards">
 
-                    <i class="icon s-4 icon-tile-four"></i>
 
+                    <i class="icon s-4 icon-account-box"></i>
                     <span>Employes</span>
                 </a>
                 <ul id="collapse-dashboards" class='collapse show' role="tabpanel" aria-labelledby="heading-dashboards" data-children=".nav-item">
@@ -73,7 +73,7 @@
 
                 <a class="nav-link ripple with-arrow collapsed" data-toggle="collapse" data-target="#collapse-ecommerce" href="#" aria-expanded="false" aria-controls="collapse-ecommerce">
 
-                    <i class="icon s-4 icon-cart"></i>
+                    <i class="icon s-4 icon-account-box"></i>
 
                     <span>Client</span>
                 </a>
@@ -106,36 +106,45 @@
             <li class="nav-item">
                 <a class="nav-link ripple " routerLink="userlist" *ngIf="loggedIn" data-url="index.html">
 
-                    <i class="icon s-4 icon-email"></i>
+                    <i class="icon s-4 icon-account-box"></i>
 
-                    <span>Liste des utilisateurs</span>
+                    <span> Utilisateurs </span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link ripple " href="apps-chat.html" data-url="index.html">
+                <a class="nav-link ripple " routerLink="postlist" *ngIf="loggedIn" data-url="index.html">
 
                     <i class="icon s-4 icon-hangouts"></i>
 
-                    <span>Chat</span>
+                    <span>Post</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link ripple " href="apps-file-manager.html" data-url="index.html">
+                <a class="nav-link ripple " routerLink="requetelist" *ngIf="loggedIn" data-url="index.html">
 
                     <i class="icon s-4 icon-folder"></i>
 
-                    <span>File Manager</span>
+                    <span> Requetes </span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link ripple " href="apps-contacts.html" data-url="index.html">
+                <a class="nav-link ripple " routerLink="discussionlist" *ngIf="loggedIn" data-url="index.html">
 
-                    <i class="icon s-4 icon-account-box"></i>
+                    <i class="icon s-4 icon-hangouts"></i>
 
-                    <span>Contacts</span>
+                    <span>Discussions</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link ripple " routerLink="rolelist" *ngIf="loggedIn" data-url="index.html">
+
+                    <i class="icon s-4 icon-tile-four"></i>
+
+                    <span>Roles</span>
                 </a>
             </li>
 
@@ -144,7 +153,7 @@
 
                     <i class="icon s-4 icon-checkbox-marked"></i>
 
-                    <span>To-Do</span>
+                    <span> Privileges </span>
                 </a>
             </li>
 

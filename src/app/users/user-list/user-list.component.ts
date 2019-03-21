@@ -20,7 +20,7 @@ export class UserListComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    if (confirm('Are you sure to delete this record?')) {
+    if (confirm('Est-vous sure de vouloir supprimer cet utilisateur?')) {
       this.service.deleteUser(id).subscribe(res => {
         this.service.refreshList();
       });

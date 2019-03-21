@@ -1,4 +1,7 @@
+<div class="form-wrapper md-elevation-8 p-8">
 <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+    <div class="title mt-4 mb-8"><h3>Ajouter un utilisateur </h3></div>
+
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   <div class="form-group">
     <label>Nom</label>
@@ -14,9 +17,11 @@
       <label>Mot de passe</label>
       <input type="password" name="password" #password="ngModel" [(ngModel)]="service.formData.password" class="form-control">
     </div>
-    
+
   </div>
-  <div class="form-group">
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready">Enregistrer </button>
   </div>
 </form>
+</div>
