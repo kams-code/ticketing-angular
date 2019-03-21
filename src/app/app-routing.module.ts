@@ -18,6 +18,8 @@ import { EmployesComponent } from './employes/employes.component';
 import { RolesComponent } from './roles/roles.component';
 import { EmployeListComponent } from './employes/employe-list/employe-list.component';
 import { ServiceListComponent } from './services/service-list/service-list.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const appRoutes: Routes = [
   {
@@ -102,6 +104,16 @@ const appRoutes: Routes = [
     canActivate: [AfterLoginService]
   }
   ,
+  {
+    path: 'entreprise',
+    component: EntreprisesComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'categorie',
+    component: CategoriesComponent,
+    canActivate: [AfterLoginService]
+  }
 
 ];
 
