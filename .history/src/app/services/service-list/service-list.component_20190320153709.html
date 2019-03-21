@@ -1,0 +1,141 @@
+<!--<table class="table table-hover">
+  <tr *ngFor="let emp of service.list">
+    <td (click)="populateForm(emp)">{{emp.nom}}</td>
+    <td><button (click)="onDelete(emp.id)" class="btn btn-sm btn-outline-danger">X</button></td>
+  </tr>
+</table>-->
+
+
+<div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="z-index: 9999999999;">
+      <div class="modal-content">
+         <app-service></app-service>
+
+      </div>
+  </div>
+</div>
+
+    <div class="content custom-scrollbar">
+
+                  <div id="e-commerce-products" class="page-layout carded full-width">
+
+                      <div class="top-bg bg-primary"></div>
+
+                      <!-- CONTENT -->
+                      <div class="page-content-wrapper">
+
+                          <!-- HEADER -->
+                          <div class="page-header light-fg row no-gutters align-items-center justify-content-between">
+
+                              <!-- APP TITLE -->
+                              <div class="col-12 col-sm">
+
+                                  <div class="logo row no-gutters justify-content-center align-items-start justify-content-sm-start">
+                                      <div class="logo-icon mr-3 mt-1">
+                                          <i class="icon-cube-outline s-6"></i>
+                                      </div>
+                                      <div class="logo-text">
+                                          <div class="h4">Services</div>
+                                          <div class="">Total des Services: 20</div>
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- / APP TITLE -->
+
+                              <!-- SEARCH -->
+                              <div class="col search-wrapper px-2">
+
+                                  <div class="input-group">
+                                      <span class="input-group-btn">
+                                          <button type="button" class="btn btn-icon">
+                                              <i class="icon icon-magnify"></i>
+                                          </button>
+                                      </span>
+                                      <input id="products-search-input" type="text" class="form-control" placeholder="Search" aria-label="Search" />
+                                  </div>
+
+                              </div>
+                              <!-- / SEARCH -->
+
+
+
+                          </div>
+                     <div style="text-align: right">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                            ajouter un employe
+                             </button>
+                     </div>
+
+
+
+                          <!-- / HEADER -->
+
+                          <div class="page-content-card">
+
+                              <table id="e-commerce-products-table" class="table dataTable">
+                                  <thead>
+                                      <tr>
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Image</span>
+                                              </div>
+                                          </th>
+
+                                          <th>
+                                            <div class="table-header">
+                                                <span class="column-title">Nom</span>
+                                            </div>
+                                        </th>
+
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Prenom</span>
+                                              </div>
+                                          </th>
+
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Email</span>
+                                              </div>
+                                          </th>
+
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Telephone</span>
+                                              </div>
+                                          </th>
+
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Actions</span>
+                                              </div>
+                                          </th>
+                                      </tr>
+                                  </thead>
+
+                                  <tbody>
+
+                                      <tr *ngFor="let emp of service.list" >
+
+
+                                          <td (click)="populateForm(emp)">{{emp.image}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.nom}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.prenom}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.email}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.telephone}}</td>
+                                          <td>
+                                              <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">
+                                                  <i class="icon icon-close s-4"></i>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      <!-- / CONTENT -->
+                  </div>
+
+              </div>
+
