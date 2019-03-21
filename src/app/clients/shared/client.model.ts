@@ -8,4 +8,5 @@ export class Client {
     ville: string;
     adresse: string;
     image: string;
+    categorie_id: number;
 }

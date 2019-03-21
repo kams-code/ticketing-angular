@@ -51,6 +51,14 @@ import { EmployeListComponent } from './employes/employe-list/employe-list.compo
 import { RoleService } from './roles/shared/role.service';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { EntrepriseComponent } from './entreprises/entreprise/entreprise.component';
+import { EntrepriseListComponent } from './entreprises/entreprise-list/entreprise-list.component';
+import { CategorieListComponent } from './categories/categorie-list/categorie-list.component';
+import { CategorieComponent } from './categories/categorie/categorie.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { EntrepriseService } from './entreprises/shared/entreprise.service';
+import { CategorieService } from './categories/shared/categorie.service';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
 
 
 
@@ -91,7 +99,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     EmployeComponent,
     EmployeListComponent,
     ToolbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    EntreprisesComponent,
+    EntrepriseComponent,
+    EntrepriseListComponent,
+    CategorieListComponent,
+    CategorieComponent,
+    CategoriesComponent
 
   ],
   imports: [
@@ -101,7 +115,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HttpClientModule,
     SnotifyModule
   ],
-  providers: [ RoleService, PostService, DiscussionService, RequeteService,
+  providers: [ CategorieService,EntrepriseService,RoleService, PostService, DiscussionService, RequeteService,
      ClientService, UserService, JarwisService, ToastrService, TokenService,
      AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },

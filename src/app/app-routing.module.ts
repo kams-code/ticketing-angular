@@ -18,13 +18,16 @@ import { EmployesComponent } from './employes/employes.component';
 import { RolesComponent } from './roles/roles.component';
 import { EmployeListComponent } from './employes/employe-list/employe-list.component';
 import { ServiceListComponent } from './services/service-list/service-list.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
-import { UserListComponent } from './users/user-list/user-list.component';
+import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { RoleListComponent } from './roles/role-list/role-list.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
 import { DiscussionListComponent } from './discussions/discussion-list/discussion-list.component';
 import { RequeteListComponent } from './requetes/requete-list/requete-list.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 const appRoutes: Routes = [
+
   {
     path: 'login',
     component: LoginComponent,
@@ -130,6 +133,98 @@ const appRoutes: Routes = [
     component: RoleListComponent,
     canActivate: [AfterLoginService]
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'request-password-reset',
+    component: RequestResetComponent,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'response-password-reset',
+    component: ResponseResetComponent,
+    canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'user',
+    component: UsersComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'client',
+    component: ClientsComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'clientListe',
+    component: ClientListComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'service',
+    component: ServicesComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'servicelist',
+    component: ServiceListComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'requete',
+    component: RequetesComponent,
+    canActivate: [AfterLoginService]
+  }
+  ,
+  {
+    path: 'discussion',
+    component: DiscussionsComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'post',
+    component: PostsComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'employe',
+    component: EmployesComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'employelist',
+    component: EmployeListComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'role',
+    component: RolesComponent,
+    canActivate: [AfterLoginService]
+  }
+  ,
+  {
+    path: 'entreprise',
+    component: EntreprisesComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'categorie',
+    component: CategoriesComponent,
+    canActivate: [AfterLoginService]
+  }
 
 ];
 
