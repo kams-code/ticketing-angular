@@ -25,6 +25,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { DiscussionListComponent } from './discussions/discussion-list/discussion-list.component';
 import { RequeteListComponent } from './requetes/requete-list/requete-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import { ChatsComponent } from './chats/chats.component';
 
 const appRoutes: Routes = [
 
@@ -223,6 +224,12 @@ const appRoutes: Routes = [
   {
     path: 'categorie',
     component: CategoriesComponent,
+    canActivate: [AfterLoginService]
+  }
+  ,
+  {
+    path: 'chat',
+    component: ChatsComponent,
     canActivate: [AfterLoginService]
   }
 

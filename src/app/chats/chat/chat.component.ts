@@ -1,40 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { RequeteService } from '../shared/requete.service';
+import { ChatService } from '../shared/chat.service';
 import { ServiceService } from '../../services/shared/service.service';
 import { Service } from '../../services/shared/service.model';
-import { CategorieService } from '../../categories/shared/categorie.service';
 
 @Component({
-  selector: 'app-requete',
-  templateUrl: './requete.component.html',
-  styleUrls: ['./requete.component.css']
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
-export class RequeteComponent implements OnInit {
+export class ChatComponent implements OnInit {
 
-  constructor(private service: RequeteService,private servicecategorie:  ServiceService,private categories:  CategorieService) { }
+  constructor(private service: ChatService, private servicecategorie:  ServiceService) { }
 
   ngOnInit() {
     this.resetForm();
-
     this.servicecategorie.refreshList();
-    this.categories.refreshList();
   }
 
-  
-
+  populateForm(emp1: Service) {
+    this.servicecategorie.formData = Object.assign({}, emp1);
+  }
   resetForm(form?: NgForm) {
     if (form != null)
       form.resetForm();
     this.service.formData = {
       id: null,
-      titre: '',
-      contenu: '',
-      categorie_id: null,
-      client_id: null
-     
-    }
-    
+      nom: '',
+      prenom: '',
+      email: '',
+      telephone: '',
+      service_id: null,
+      pays: '',
+      ville: '',
+      adresse: '',
+      image: ''
+    };
   }
 
 
@@ -46,14 +47,14 @@ export class RequeteComponent implements OnInit {
   }
 
   insertRecord(form: NgForm) {
-    this.service.postRequete(form.value).subscribe(res => {
+    this.service.postChat(form.value).subscribe(res => {
       this.resetForm(form);
       this.service.refreshList();
     });
   }
 
   updateRecord(form: NgForm) {
-    this.service.putRequete(form.value).subscribe(res => {
+    this.service.putChat(form.value).subscribe(res => {
       this.resetForm(form);
       this.service.refreshList();
     });
@@ -61,4 +62,3 @@ export class RequeteComponent implements OnInit {
   }
 
 }
- 
