@@ -15,8 +15,9 @@ export class ImageService {
     const formData = new FormData();
 
     formData.append('image', image);
-    this.http.post(this.rootURL+'/image', formData)
-    console.log();
+    this.http.post(this.rootURL+'/image', formData).toPromise().then( res =>localStorage.setItem('image', (res as any).nom));
+    
+    console.log(localStorage.getItem('image'));
     //this.nom= this.http.post(this.rootURL+'/image', formData);
     return this.http.post(this.rootURL+'/image', formData);
   }

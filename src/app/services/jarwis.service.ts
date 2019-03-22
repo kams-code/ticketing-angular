@@ -10,9 +10,18 @@ export class JarwisService {
   signup(data) {
     return this.http.post(`${this.baseUrl}/signup`, data)
   }
-
+login1: any;
+var: [];
+userid:number;
   login(data) {
-    return this.http.post(`${this.baseUrl}/login`, data)
+    this.login1= this.http.post(`${this.baseUrl}/login`, data).toPromise().then( res => localStorage.setItem('iduser', (res as any).user.id));
+   // console.log(this.login1.toPromise().then(res =>this.var= res))
+   // console.log(this.var);
+this.userid =parseInt(localStorage.getItem('iduser'));
+    console.log(localStorage.getItem('userid'));
+    console.log(localStorage.getItem('iduser'));
+    console.log(this.userid);
+    return  this.http.post(`${this.baseUrl}/login`, data);
   }
 
   sendPasswordResetLink(data) {

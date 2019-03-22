@@ -4,6 +4,7 @@ import { RequeteService } from '../shared/requete.service';
 import { ServiceService } from '../../services/shared/service.service';
 import { Service } from '../../services/shared/service.model';
 import { CategorieService } from '../../categories/shared/categorie.service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-requete',
@@ -12,15 +13,15 @@ import { CategorieService } from '../../categories/shared/categorie.service';
 })
 export class RequeteComponent implements OnInit {
 
-  constructor(private service: RequeteService,private servicecategorie:  ServiceService,private categories:  CategorieService) { }
+  constructor(private service: RequeteService,private servicecategorie:  ServiceService,private categories:  CategorieService,private users:  UserService) { }
 
   ngOnInit() {
     this.resetForm();
 
     this.servicecategorie.refreshList();
     this.categories.refreshList();
+    this.users.refreshList();
   }
-
   
 
   resetForm(form?: NgForm) {

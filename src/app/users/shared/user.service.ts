@@ -8,6 +8,7 @@ export class UserService {
 
   formData  : User;
   list : [];
+  role:any;
   readonly rootURL ="http://localhost:8000/api"
 
   constructor(private http : HttpClient) { }
@@ -20,6 +21,7 @@ export class UserService {
   refreshList(){
     this.http.get(this.rootURL+'/user')
     .toPromise().then(res =>this.list= (res as any).data);
+    console.log(localStorage.getItem('iduser'));
     
   }
 
