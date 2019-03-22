@@ -59,6 +59,9 @@ import { CategoriesComponent } from './categories/categories.component';
 import { EntrepriseService } from './entreprises/shared/entreprise.service';
 import { CategorieService } from './categories/shared/categorie.service';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { ChatComponent } from './chat/chat.component';
+import { ChatDiscussionComponent } from './chat/chat-discussion/chat-discussion.component';
+import { ChatMessageComponent } from './chat/chat-message/chat-message.component';
 
 
 
@@ -105,7 +108,10 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
     EntrepriseListComponent,
     CategorieListComponent,
     CategorieComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ChatComponent,
+    ChatDiscussionComponent,
+    ChatMessageComponent
 
   ],
   imports: [
