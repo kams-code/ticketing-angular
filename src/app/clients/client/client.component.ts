@@ -28,7 +28,6 @@ nomimg: any;
 
       this.imageService.uploadImage(this.selectedFile.file).subscribe(
         (res) => {
-          console.log('je suis ici');
           //this.nomimg=res;
         },
         (err) => {
@@ -50,6 +49,7 @@ nomimg: any;
     this.servicecategorie.formData = Object.assign({}, emp1);
   }
   resetForm(form?: NgForm) {
+    this.nomimg=localStorage.getItem('image');
     if (form != null)
       form.resetForm();
     this.service.formData = {
@@ -58,10 +58,7 @@ nomimg: any;
       prenom: '',
       email: '',
       telephone: '',
-      pays: '',
-      ville: '',
-      adresse: '',
-      image: '',
+      image: this.nomimg,
       categorie_id: null,
     };
   }

@@ -20,7 +20,8 @@ export class EntrepriseService {
   refreshList(){
     this.http.get(this.rootURL+'/Entreprise')
     .toPromise().then(res =>this.list= (res as any).data);
-    
+    console.log(this.http.get(this.rootURL+'/Entreprise')
+    .toPromise().then(res =>this.list= (res as any).data));
   }
 
   putEntreprise(formData : Entreprise){

@@ -7,7 +7,7 @@
   <div class="form-group">
     <label>Message</label>
     <input name="body" #body="ngModel" [(ngModel)]="service.formData.body" class="form-control" required>
-    <div class="validation-error" *ngIf="body.invalid && body.touched">This field is required.</div>
+    <div class="validation-error" style="color: red" *ngIf="body.invalid && body.touched">Ce champ est requis.</div>
   </div>
 
 

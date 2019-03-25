@@ -20,7 +20,8 @@ export class ClientService {
   refreshList(){
     this.http.get(this.rootURL+'/client')
     .toPromise().then(res =>this.list= (res as any).data);
-    
+    console.log(this.http.get(this.rootURL+'/client')
+    );
   }
 
   putClient(formData : Client){

@@ -36,8 +36,8 @@
                                             <i class="icon-cube-outline s-6"></i>
                                         </div>
                                         <div class="logo-text">
-                                            <div class="h4">Clients</div>
-                                            <div class="">Total Clients: 20</div>
+                                            <div class="h4">Employé de l'entreprise</div>
+                                            <div class="">Total employé: {{service.list.length}}</div>
                                         </div>
                                     </div>
 
@@ -53,7 +53,7 @@
                                                 <i class="icon icon-magnify"></i>
                                             </button>
                                         </span>
-                                        <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Recherche" />
+                                        <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Search" />
                                     </div>
 
                                 </div>
@@ -63,7 +63,7 @@
 
                             </div>
                        <div style="text-align: right">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
                               ajouter un client
                                </button>
                        </div>
@@ -79,7 +79,10 @@
                                         <tr>
                                             <th>
                                                 <div class="table-header">
-                                                    <span class="column-title">Image</span>
+                                                    <span *ngFor="let emp of serviceRole.listuser" class="column-title">{{emp}}Image
+
+
+                                                    </span>
                                                 </div>
                                             </th>
 
@@ -120,7 +123,8 @@
                                         <tr *ngFor="let emp of service.list" >
 
 
-                                            <td (click)="populateForm(emp)">{{emp.image}}</td>
+                                            <td (click)="populateForm(emp)">
+                                                    <img class="product-image" src="http://127.0.0.1:8000/images/{{emp.image}}"></td>
                                             <td (click)="populateForm(emp)">{{emp.nom}}</td>
                                             <td (click)="populateForm(emp)">{{emp.prenom}}</td>
                                             <td (click)="populateForm(emp)">{{emp.email}}</td>
@@ -129,7 +133,9 @@
                                                 <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">
                                                     <i class="icon icon-close s-4"></i>
                                                 </button>
-                                                <button type="button" (click)="populateForm(emp)" class="btn btn-icon" data-toggle="modal" data-target="#exampleModalLive">
+                                                <button *ngIf="checkpermission('add_users')"
+                                                
+                                                type="button" (click)="checkpermission('add_users')" class="btn btn-icon" data-toggle="modal" data-target="#exampleModalLive">
                                                   <i class="icon icon-pencil s-4"></i>
                                                 </button>
 

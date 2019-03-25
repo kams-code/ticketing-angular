@@ -7,7 +7,7 @@
   <div class="form-group">
     <label>title</label>
     <input name="title" #title="ngModel" [(ngModel)]="service.formData.title" class="form-control" required>
-    <div class="validation-error" *ngIf="title.invalid && title.touched">This field is required.</div>
+    <div class="validation-error" style="color: red" *ngIf="title.invalid && title.touched">Ce champ est requis.</div>
   </div>
 
 

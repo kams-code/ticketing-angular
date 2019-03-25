@@ -1,3 +1,13 @@
+<!--<table class="table table-hover">
+  <tr *ngFor="let emp of service.list">
+    <td (click)="populateForm(emp)">{{emp.nom}}</td>
+    <td (click)="populateForm(emp)">{{emp.prenom}}</td>
+    <td (click)="populateForm(emp)">{{emp.email}}</td>
+    <td (click)="populateForm(emp)">{{emp.telephone}}</td>
+    <td><button (click)="onDelete(emp.id)" class="btn btn-sm btn-outline-danger">X</button></td>
+  </tr>
+</table>-->
+
 <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" style="z-index: 9999999999;">
       <div class="modal-content">
@@ -27,8 +37,8 @@
                                           <i class="icon-cube-outline s-6"></i>
                                       </div>
                                       <div class="logo-text">
-                                          <div class="h4">projets</div>
-                                          <div class="">Total projets: 20</div>
+                                          <div class="h4">Projets</div>
+                                          <div class="">Total des Projets: {{service.list.length}}</div>
                                       </div>
                                   </div>
 
@@ -44,7 +54,7 @@
                                               <i class="icon icon-magnify"></i>
                                           </button>
                                       </span>
-                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Recherche" />
+                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Search" />
                                   </div>
 
                               </div>
@@ -54,8 +64,8 @@
 
                           </div>
                      <div style="text-align: right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
-                            ajouter un projet
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
+                            ajouter un Projet
                              </button>
                      </div>
 
@@ -68,7 +78,7 @@
                               <table id="e-commerce-products-table" class="table dataTable">
                                   <thead>
                                       <tr>
-
+                                     
 
                                           <th>
                                             <div class="table-header">
@@ -78,18 +88,17 @@
 
                                           <th>
                                               <div class="table-header">
-                                                  <span class="column-title">Date de dedut</span>
+                                                  <span class="column-title">Période</span>
                                               </div>
                                           </th>
 
                                           <th>
-                                            <div class="table-header">
-                                                <span class="column-title">Date de fin</span>
-                                            </div>
-                                        </th>
+                                              <div class="table-header">
+                                                  <span class="column-title">SLA?</span>
+                                              </div>
+                                          </th>
 
-
-
+                                        
 
                                           <th>
                                               <div class="table-header">
@@ -104,11 +113,9 @@
                                       <tr *ngFor="let emp of service.list" >
 
 
-
                                           <td (click)="populateForm(emp)">{{emp.nom}}</td>
-                                          <td (click)="populateForm(emp)">{{emp.dateDeb}}</td>
-                                          <td (click)="populateForm(emp)">{{emp.dateFin}}</td>
-
+                                          <td (click)="populateForm(emp)">{{emp.periode}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.isSLA}}</td>
                                           <td>
                                               <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">
                                                   <i class="icon icon-close s-4"></i>

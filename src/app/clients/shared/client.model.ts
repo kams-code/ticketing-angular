@@ -4,9 +4,6 @@ export class Client {
     prenom: string;
     email: string;
     telephone: string;
-    pays: string;
-    ville: string;
-    adresse: string;
-    image: string;
+     image: string;
     categorie_id: number;
 }

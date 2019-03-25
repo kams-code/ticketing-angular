@@ -5,23 +5,23 @@
     <div class="form-group">
       <label>Nom</label>
       <input name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" class="form-control" required>
-      <div class="validation-error" *ngIf="nom.invalid && nom.touched">Ce champ est requis.</div>
+      <div class="validation-error" style="color: red" *ngIf="nom.invalid && nom.touched">Ce champ est requis.</div>
     </div>
 
     <div class="form-group">
       <label>Date de debut</label>
       <input type="number" name="dateDeb" #dateDeb="ngModel" [(ngModel)]="service.formData.dateDeb" class="form-control" required>
-      <div class="validation-error" *ngIf="dateDeb.invalid && dateDeb.touched">Ce champ est requis.</div>
+      <div class="validation-error" style="color: red" *ngIf="dateDeb.invalid && dateDeb.touched">Ce champ est requis.</div>
     </div>
     <div class="form-group">
       <label>siege</label>
       <input name="siege" #siege="ngModel" [(ngModel)]="service.formData.siege" class="form-control" required>
-      <div class="validation-error" *ngIf="siege.invalid && siege.touched">Ce champ est requis.</div>
+      <div class="validation-error" style="color: red" *ngIf="siege.invalid && siege.touched">Ce champ est requis.</div>
     </div>
     <div class="form-group">
       <label>date de fin</label>
       <input name="site" #site="ngModel" [(ngModel)]="service.formData.site" class="form-control" required>
-      <div class="validation-error" *ngIf="site.invalid && site.touched">Ce champ est requis.</div>
+      <div class="validation-error" style="color: red" *ngIf="site.invalid && site.touched">Ce champ est requis.</div>
     </div>
 
 

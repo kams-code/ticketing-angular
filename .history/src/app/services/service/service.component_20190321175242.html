@@ -5,7 +5,7 @@
   <div class="form-group">
     <label>Nom</label>
     <input name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" class="form-control" required>
-    <div class="validation-error" *ngIf="nom.invalid && nom.touched">Ce champ est requis.</div>
+    <div class="validation-error" style="color: red" *ngIf="nom.invalid && nom.touched">Ce champ est requis.</div>
   </div>
 
   <div class="modal-footer">

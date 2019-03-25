@@ -39,7 +39,7 @@
                                       </div>
                                       <div class="logo-text">
                                           <div class="h4">Utilisateurs</div>
-                                          <div class="">Total des utilisateurs: 20</div>
+                                          <div class="">Total des utilisateurs: {{service.list.length}}</div>
                                       </div>
                                   </div>
 
@@ -55,7 +55,7 @@
                                               <i class="icon icon-magnify"></i>
                                           </button>
                                       </span>
-                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Recherche" />
+                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Search" />
                                   </div>
 
                               </div>
@@ -65,7 +65,7 @@
 
                           </div>
                      <div style="text-align: right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
                            ajouter un utilisateur
                              </button>
                      </div>

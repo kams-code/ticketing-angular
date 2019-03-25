@@ -36,7 +36,7 @@
                                       </div>
                                       <div class="logo-text">
                                           <div class="h4">Posts</div>
-                                          <div class="">Total des posts: 20</div>
+                                          <div class="">Total des posts: {{service.list.length}}</div>
                                       </div>
                                   </div>
 
@@ -52,7 +52,7 @@
                                               <i class="icon icon-magnify"></i>
                                           </button>
                                       </span>
-                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Recherche" />
+                                      <input id="products-search-input" type="text" class="form-control" placeholder="Recherche" aria-label="Search" />
                                   </div>
 
                               </div>
@@ -62,7 +62,7 @@
 
                           </div>
                      <div style="text-align: right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
                            ajouter un post
                              </button>
                      </div>
@@ -102,9 +102,8 @@
 
                                       <tr *ngFor="let emp of service.list" >
 
-                                        <td
-                                      (click)="populateForm(emp)">{{emp.user_id}}</td>
                                         <td (click)="populateForm(emp)">{{emp.body}}</td>
+                                        <td (click)="populateForm(emp)">{{emp.utilisateur}}</td>
 
                                           <td>
                                               <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">

@@ -1,0 +1,54 @@
+
+
+
+
+<table class="table table-hover">
+                                   
+    
+    <thead>
+        <tr>
+            <th>Privilèges</th>
+         
+        <th *ngFor="let emprole of serviceRole.list">{{emprole.name}}</th>  
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+           
+
+        <tr class="gradeC"  *ngFor="let empperm of service.list">
+                              
+                                  <td>
+                              
+
+                                        {{empperm.name}}
+                                 </td>
+                               
+
+                             
+                                 <ng-container *ngFor="let emprole of serviceRole.list">
+
+                                        <ng-container *ngIf="RolehasPermissionTo(emprole.id,empperm.id)">
+                                                <input (click)="onSubmit(form)" checked id="checkbox" type="checkbox" name="permissions[]" class="adddire" value="{{ empperm.name }}"> 
+                            
+                                        
+                                        </ng-container>
+                                        <ng-container *ngIf="RolehasPermissionTo(emprole.id,empperm.id)==false">
+                                                <input (click)="onSubmit(form)"  id="checkbox" type="checkbox" name="permissions[]" class="adddire" value="{{ empperm.name }}"> 
+                            
+                                        
+                                        </ng-container>
+                                        <td>{{emprole.name}} </td>  
+                                </ng-container>
+                                
+                                 
+                             
+                              
+                             </tr> 
+                            
+                            
+
+       
+    </tbody>
+</table>

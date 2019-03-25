@@ -3,7 +3,11 @@ import { NgForm } from '@angular/forms';
 import { EntrepriseService } from '../shared/entreprise.service';
 import { ServiceService } from '../../services/shared/service.service';
 import { Service } from '../../services/shared/service.model';
+import { ImageService } from '../../services/image/image-service.service';
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 @Component({
   selector: 'app-entreprise',
   templateUrl: './entreprise.component.html',
@@ -11,7 +15,30 @@ import { Service } from '../../services/shared/service.model';
 })
 export class EntrepriseComponent implements OnInit {
 
-  constructor(private service: EntrepriseService, private servicecategorie:  ServiceService) { }
+  selectedFile: ImageSnippet;
+  constructor(private service: EntrepriseService, private servicecategorie:  ServiceService,private imageService: ImageService) { }
+  nomimg: any;
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      this.imageService.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+          //this.nomimg=res;
+        },
+        (err) => {
+        
+        })
+    });
+
+    reader.readAsDataURL(file);
+  }
+
 
   ngOnInit() {
     this.resetForm();
@@ -22,13 +49,16 @@ export class EntrepriseComponent implements OnInit {
     this.servicecategorie.formData = Object.assign({}, emp1);
   }
   resetForm(form?: NgForm) {
+
+    this.nomimg=localStorage.getItem('image');
+   console.log(this.nomimg);
     if (form != null)
       form.resetForm();
     this.service.formData = {
       id: null,
     
     nom: '',
-    logo: '',
+    logo: this.nomimg,
     siege: '',
     site: '',
     email: '',

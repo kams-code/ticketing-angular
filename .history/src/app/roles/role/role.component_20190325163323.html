@@ -1,0 +1,18 @@
+<div class="form-wrapper md-elevation-8 p-8">
+<form #form="ngForm" (submit)="onSubmit(form)" enctype="multipart/form-data" autocomplete="off">
+  <!-- <div class="title mt-4 mb-8"><h3>Ajouter un role</h3></div>-->
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+
+  <div class="form-group">
+    <label>Nom</label>
+    <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" required>
+    <div class="validation-error" style="color: red" *ngIf="name.invalid && name.touched">Ce champ est requis.</div>
+  </div>
+
+
+  <div style="text-align: right"></div>
+      <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')">Enregistrer </button>
+  </div>
+</form>
+</div>
