@@ -61,7 +61,7 @@
     <input name="adresse" #adresse="ngModel" [(ngModel)]="service.formData.adresse" class="form-control" required>
     <div class="validation-error" *ngIf="adresse.invalid && adresse.touched">Ce champ est requis.</div>
   </div>
-
+ 
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
     <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" (click)="processFile(imageInput)">Enregistrer </button>

@@ -10,17 +10,35 @@ import { Role } from '../../roles/shared/role.model';
   styleUrls: ['./privilege-list.component.css']
 })
 export class PrivilegeListComponent implements OnInit {
-
+  list:[];
+  role:any;
+  permission:any
   constructor(private service: PrivilegeService,private serviceRole: RoleService) { }
 
   ngOnInit() {
     this.service.refreshList();
     this.serviceRole.refreshList();
   }
+  
 
   populateForm(emp: Privilege,emprole: Role) {
     this.serviceRole.formData = Object.assign({}, emprole);
     this.service.formData = Object.assign({}, emp);
+  }
+  RolehasPermissionTo(idrole: number,idper: number) {
+    
+    this.list=this.service.listrolepriv
+    for(var index in this.list)
+    { 
+        if ((this.list[index] as any).permission_id==idper && (this.list[index] as any).role_id==idrole  ) {
+         // console.log((this.list[index] as any).permission_id);
+         // console.log((this.list[index] as any).role_id);
+
+          return true;
+
+        }
+    }
+    return false;
   }
  
 

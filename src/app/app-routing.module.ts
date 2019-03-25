@@ -26,6 +26,11 @@ import { DiscussionListComponent } from './discussions/discussion-list/discussio
 import { RequeteListComponent } from './requetes/requete-list/requete-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { ChatsComponent } from './chats/chats.component';
+import { PrivilegeListComponent } from './privileges/privilege-list/privilege-list.component';
+import { ProjetComponent } from './projets/projet/projet.component';
+import { ProjetListComponent } from './projets/projet-list/projet-list.component';
+import { SlaListComponent } from './slas/sla-list/sla-list.component';
+import { EntrepriseListComponent } from './entreprises/entreprise-list/entreprise-list.component';
 
 const appRoutes: Routes = [
 
@@ -218,7 +223,7 @@ const appRoutes: Routes = [
   ,
   {
     path: 'entreprise',
-    component: EntreprisesComponent,
+    component: EntrepriseListComponent,
     canActivate: [AfterLoginService]
   },
   {
@@ -232,7 +237,24 @@ const appRoutes: Routes = [
     component: ChatsComponent,
     canActivate: [AfterLoginService]
   }
+  ,
+  {
+    path: 'privileges',
+    component: PrivilegeListComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'projets',
+    component: ProjetListComponent,
+    canActivate: [AfterLoginService]
+  }
 
+  ,
+  {
+    path: 'slas',
+    component: SlaListComponent,
+    canActivate: [AfterLoginService]
+  }
 ];
 
 @NgModule({

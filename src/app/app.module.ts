@@ -62,6 +62,16 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { ChatsComponent } from './chats/chats.component';
 import { ChatListComponent } from './chats/chat-list/chat-list.component';
 import { ChatComponent } from './chats/chat/chat.component';
+import { PrivilegeListComponent } from './privileges/privilege-list/privilege-list.component';
+import { PrivilegeService } from './privileges/shared/Privilege.service';
+import { ProjetListComponent } from './projets/projet-list/projet-list.component';
+import { ProjetComponent } from './projets/projet/projet.component';
+import { ProjetsComponent } from './projets/projets.component';
+import { ProjetService } from './projets/shared/Projet.service';
+import { SlaComponent } from './slas/sla/sla.component';
+import { SlaListComponent } from './slas/sla-list/sla-list.component';
+import { SlasComponent } from './slas/slas.component';
+import { SlaService } from './slas/shared/Sla.service';
 
 
 
@@ -111,7 +121,14 @@ import { ChatComponent } from './chats/chat/chat.component';
     CategoriesComponent,
     ChatsComponent,
     ChatListComponent,
-    ChatComponent
+    ChatComponent,
+    PrivilegeListComponent,
+    ProjetListComponent,
+    ProjetComponent,
+    ProjetsComponent,
+    SlaComponent,
+    SlaListComponent,
+    SlasComponent
 
   ],
   imports: [
@@ -121,7 +138,7 @@ import { ChatComponent } from './chats/chat/chat.component';
     HttpClientModule,
     SnotifyModule
   ],
-  providers: [ CategorieService,EntrepriseService,RoleService, PostService, DiscussionService, RequeteService,
+  providers: [SlaService,ProjetService,PrivilegeService, CategorieService,EntrepriseService,RoleService, PostService, DiscussionService, RequeteService,
      ClientService, UserService, JarwisService, ToastrService, TokenService,
      AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },

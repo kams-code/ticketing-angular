@@ -84,7 +84,7 @@
 
                                             <th>
                                               <div class="table-header">
-                                                  <span class="column-title">Client</span>
+                                                  <span class="column-title">Image</span>
                                               </div>
                                           </th>
 
@@ -122,7 +122,9 @@
                                     <tbody>
 
                                         <tr *ngFor="let emp of service.list" >
-
+                                            <td (click)="populateForm(emp)">
+                                                <img class="product-image" src="http://127.0.0.1:8000/images/{{emp.image}}"></td>
+                                      
 
                                             <td (click)="populateForm(emp)">{{emp.client}}</td>
                                             <td (click)="populateForm(emp)">{{emp.titre}}</td>

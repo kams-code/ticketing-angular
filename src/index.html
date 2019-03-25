@@ -80,12 +80,34 @@
        <app-root></app-root>
     </main>
     <script type="text/javascript" src="../assets/js/apps/e-commerce/products/products.js"></script>
-<<<<<<< HEAD
-   
-=======
     <script type="text/javascript" src="../assets/js/apps/chat/chat.js"></script>
->>>>>>> d7cebe42672a040c8a0fa0f2d3d0c8ae39eb7568
+<script  type="text/javascript" >   $(document).on('click', '.adddire', function(){
 
+           
+        var action = $(this).attr('data-action');
+
+        $.ajax({
+          type: "get",
+          headers: {
+        'Authorization':'Basic xxxxxxxxxxxxx',
+        'X-CSRF-TOKEN':'xxxxxxxxxxxxxxxxxxxx',
+        'Accept': 'application/json',
+'Accept-Encoding': 'gzip, deflate, br',
+
+'Connection': 'keep-alive',
+'Host': 'localhost:8000',
+'Origin': 'http://localhost:4200'
+    },
+          url: "https://localhost:8080/api/user",
+          data: {id:$(this).attr('data-idrole'),permissions:$(this).attr('data-id'),'action':action},
+          dataType: "text",
+          success: function(data){
+            console.log("hjvdsbhsdjv0000000000000000000000000000000000");
+          }
+        });
+
+      });
+    </script> 
 </body>
 
 
