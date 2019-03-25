@@ -27,7 +27,6 @@ import { RequeteListComponent } from './requetes/requete-list/requete-list.compo
 import { UserListComponent } from './users/user-list/user-list.component';
 import { ChatComponent } from './chat/chat.component';
 import { ProjetListComponent } from './projets/projet-list/projet-list.component';
-import { ElementslaListComponent } from './elementsslas/elementsla-list/elementsla-list.component';
 
 const appRoutes: Routes = [
 
@@ -238,11 +237,7 @@ const appRoutes: Routes = [
     component: ProjetListComponent,
     canActivate: [AfterLoginService]
   },
-  {
-    path: 'slalist',
-    component: ElementslaListComponent,
-    canActivate: [AfterLoginService]
-  },
+  
 
 ];
 
