@@ -46,25 +46,11 @@
     <input type="number" name="telephone" #telephone="ngModel" [(ngModel)]="service.formData.telephone" class="form-control" required>
     <div class="validation-error" *ngIf="telephone.invalid && telephone.touched">Ce champ est requis.</div>
   </div>
-  <div class="form-group">
-    <label>Pays</label>
-    <input name="pays" #pays="ngModel" [(ngModel)]="service.formData.pays" class="form-control" required>
-    <div class="validation-error" *ngIf="pays.invalid && pays.touched">Ce champ est requis.</div>
-  </div>
-  <div class="form-group">
-    <label>Ville</label>
-    <input name="ville" #ville="ngModel" [(ngModel)]="service.formData.ville" class="form-control" required>
-    <div class="validation-error" *ngIf="ville.invalid && ville.touched">Ce champ est requis.</div>
-  </div>
-  <div class="form-group">
-    <label>Adresse</label>
-    <input name="adresse" #adresse="ngModel" [(ngModel)]="service.formData.adresse" class="form-control" required>
-    <div class="validation-error" *ngIf="adresse.invalid && adresse.touched">Ce champ est requis.</div>
-  </div>
  
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
-    <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" (click)="processFile(imageInput)">Enregistrer </button>
+ 
+  <div style="text-align: right">
+    <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal"style="margin: 5px;">Fermer</button>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')" (click)="processFile(imageInput)">Enregistrer </button>
 </div>
 </form>
 </div>

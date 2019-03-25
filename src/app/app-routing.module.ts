@@ -30,6 +30,7 @@ import { PrivilegeListComponent } from './privileges/privilege-list/privilege-li
 import { ProjetComponent } from './projets/projet/projet.component';
 import { ProjetListComponent } from './projets/projet-list/projet-list.component';
 import { SlaListComponent } from './slas/sla-list/sla-list.component';
+import { EntrepriseListComponent } from './entreprises/entreprise-list/entreprise-list.component';
 
 const appRoutes: Routes = [
 
@@ -223,6 +224,11 @@ const appRoutes: Routes = [
   {
     path: 'entreprise',
     component: EntreprisesComponent,
+    canActivate: [AfterLoginService]
+  },
+  {
+    path: 'entrepriselist',
+    component: EntrepriseListComponent,
     canActivate: [AfterLoginService]
   },
   {

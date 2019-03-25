@@ -39,7 +39,7 @@
                                       </div>
                                       <div class="logo-text">
                                           <div class="h4">Utilisateurs</div>
-                                          <div class="">Total des utilisateurs: 20</div>
+                                          <div class="">Total des utilisateurs: {{service.list.length}}
                                       </div>
                                   </div>
 
@@ -65,7 +65,7 @@
 
                           </div>
                      <div style="text-align: right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
                            ajouter un utilisateur
                              </button>
                      </div>
@@ -116,7 +116,7 @@
                                               <button type="button" (click)="populateForm(emp)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
                                                 <i class="icon icon-pencil s-4"></i>
                                               </button>
-                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+                                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive" style="background-color:black ">
                                                 ajouter un utilisateur
                                                   </button>
                                           </td>

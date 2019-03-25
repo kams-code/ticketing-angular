@@ -35,14 +35,21 @@
     </div>
     <div class="form-group">
       <label>logo</label>
-      <input type="file" name="logo" #logo="ngModel" [(ngModel)]="service.formData.logo" class="form-control" required>
-      <div class="validation-error" *ngIf="logo.invalid && logo.touched">Ce champ est requis.</div>
-    </div>
+      <label class="image-upload-container btn btn-bwm">
+        <span>Select Image</span>
+        <input #imageInput
+               type="file"
+               accept="image/*"
+               >
+               <input type="hidden" name="logo" #logo="ngModel" value="{{imageService.nom}}"[(ngModel)]="service.formData.logo">
+    
+      </label></div>
+   
 
 
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
-      <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')">Enregistrer </button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')" onclick="$('.modal').modal('hide')"(click)="processFile(imageInput)">Enregistrer </button>
   </div>
   </form>
   </div>

@@ -49,6 +49,7 @@
       <span>Select Image</span>
       <input #imageInput
              type="file"
+             multiple
              accept="image/*"
              >
              <input type="hidden" name="image" #image="ngModel" value="{{imageService.nom}}" [(ngModel)]="service.formData.image">
@@ -56,7 +57,7 @@
     </label>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
-        <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready"  (click)="processFile(imageInput)">Enregistrer </button>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')"  (click)="processFile(imageInput)">Enregistrer </button>
     </div>
 </form>
 </div>

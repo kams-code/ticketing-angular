@@ -75,23 +75,25 @@
 
                     <i class="icon s-4 icon-account-box"></i>
 
-                    <span>Client</span>
+                    <span>Entreprise</span>
                 </a>
                 <ul id="collapse-ecommerce" class='collapse ' role="tabpanel" aria-labelledby="heading-ecommerce" data-children=".nav-item">
 
+                    
+                    <li class="nav-item">
+                        <a class="nav-link ripple " routerLink="entrepriselist" *ngIf="loggedIn" data-url="index.html">
+
+                            <span>liste des entreprises</span>
+                        </a>
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link ripple "  routerLink="clientListe" *ngIf="loggedIn" data-url="index.html">
 
-                            <span>Liste des clients</span>
+                            <span>Liste des employés</span>
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link ripple " href="../vertical-layout-below-toolbar-below-footer-left/apps-e-commerce-product.html" data-url="index.html">
-
-                            <span>Product</span>
-                        </a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link ripple " href="../vertical-layout-below-toolbar-below-footer-left/apps-e-commerce-orders.html" data-url="index.html">

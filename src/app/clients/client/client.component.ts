@@ -58,9 +58,6 @@ nomimg: any;
       prenom: '',
       email: '',
       telephone: '',
-      pays: '',
-      ville: '',
-      adresse: '',
       image: this.nomimg,
       categorie_id: null,
     };
