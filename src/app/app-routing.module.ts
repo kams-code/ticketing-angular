@@ -25,18 +25,11 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { DiscussionListComponent } from './discussions/discussion-list/discussion-list.component';
 import { RequeteListComponent } from './requetes/requete-list/requete-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-<<<<<<< HEAD
 import { ChatsComponent } from './chats/chats.component';
 import { PrivilegeListComponent } from './privileges/privilege-list/privilege-list.component';
 import { ProjetComponent } from './projets/projet/projet.component';
 import { ProjetListComponent } from './projets/projet-list/projet-list.component';
 import { SlaListComponent } from './slas/sla-list/sla-list.component';
-import { EntrepriseListComponent } from './entreprises/entreprise-list/entreprise-list.component';
-=======
-import { ChatComponent } from './chat/chat.component';
-import { ProjetListComponent } from './projets/projet-list/projet-list.component';
-import { ElementslaListComponent } from './elementsslas/elementsla-list/elementsla-list.component';
->>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
 const appRoutes: Routes = [
 
@@ -229,7 +222,7 @@ const appRoutes: Routes = [
   ,
   {
     path: 'entreprise',
-    component: EntrepriseListComponent,
+    component: EntreprisesComponent,
     canActivate: [AfterLoginService]
   },
   {
@@ -250,22 +243,10 @@ const appRoutes: Routes = [
     canActivate: [AfterLoginService]
   },
   {
-<<<<<<< HEAD
     path: 'projets',
     component: ProjetListComponent,
     canActivate: [AfterLoginService]
   }
-=======
-    path: 'projetlist',
-    component: ProjetListComponent,
-    canActivate: [AfterLoginService]
-  },
-  {
-    path: 'slalist',
-    component: ElementslaListComponent,
-    canActivate: [AfterLoginService]
-  },
->>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
   ,
   {

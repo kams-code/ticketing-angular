@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { NgForm } from '@angular/forms';
 import { ProjetService } from '../shared/projet.service';
 import { EntrepriseService } from '../../entreprises/shared/entreprise.service';
 import { Service } from '../../services/shared/service.model';
 import { CategorieService } from '../../categories/shared/categorie.service';
-=======
->>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
 @Component({
   selector: 'app-projet',
@@ -15,7 +12,6 @@ import { CategorieService } from '../../categories/shared/categorie.service';
 })
 export class ProjetComponent implements OnInit {
 
-<<<<<<< HEAD
 nbrsla=0;
 sla=false;
 myRating:any;
@@ -82,11 +78,6 @@ addsla(){
       this.service.refreshList();
     });
 
-=======
-  constructor() { }
-
-  ngOnInit() {
->>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
   }
 
 }
