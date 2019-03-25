@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ProjetService } from '../shared/projet.service';
 import { Projet } from '../shared/projet.model';
+=======
+>>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
 @Component({
   selector: 'app-projet-list',
@@ -9,6 +12,7 @@ import { Projet } from '../shared/projet.model';
 })
 export class ProjetListComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private service: ProjetService) { }
 
   ngOnInit() {
@@ -25,6 +29,11 @@ export class ProjetListComponent implements OnInit {
         this.service.refreshList();
       });
     }
+=======
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
   }
 
 }

@@ -1,0 +1,44 @@
+<div class="form-wrapper md-elevation-8 p-8">
+  <form #form="ngForm" (submit)="onSubmit(form)" enctype="multipart/form-data" autocomplete="off">
+    <!-- <div class="title mt-4 mb-8"><h3>Ajouter un client</h3></div>-->
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+    <div class="form-group">
+      <label>Nom</label>
+      <input name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" class="form-control" required>
+      <div class="validation-error" *ngIf="nom.invalid && nom.touched">Ce champ est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label>D</label>
+      <input type="number" name="dateDeb" #dateDeb="ngModel" [(ngModel)]="service.formData.dateDeb" class="form-control" required>
+      <div class="validation-error" *ngIf="dateDeb.invalid && dateDeb.touched">Ce champ est requis.</div>
+    </div>
+    <div class="form-group">
+      <label>siege</label>
+      <input name="siege" #siege="ngModel" [(ngModel)]="service.formData.siege" class="form-control" required>
+      <div class="validation-error" *ngIf="siege.invalid && siege.touched">Ce champ est requis.</div>
+    </div>
+    <div class="form-group">
+      <label>site</label>
+      <input name="site" #site="ngModel" [(ngModel)]="service.formData.site" class="form-control" required>
+      <div class="validation-error" *ngIf="site.invalid && site.touched">Ce champ est requis.</div>
+    </div>
+    <div class="form-group">
+      <label>Secteur d'activite</label>
+      <input name="secteuractivite" #secteuractivite="ngModel" [(ngModel)]="service.formData.secteuractivite" class="form-control" required>
+      <div class="validation-error" *ngIf="secteuractivite.invalid && secteuractivite.touched">Ce champ est requis.</div>
+    </div>
+    <div class="form-group">
+      <label>logo</label>
+      <input type="file" name="logo" #logo="ngModel" [(ngModel)]="service.formData.logo" class="form-control" required>
+      <div class="validation-error" *ngIf="logo.invalid && logo.touched">Ce champ est requis.</div>
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready">Enregistrer </button>
+  </div>
+  </form>
+  </div>
+

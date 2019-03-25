@@ -59,6 +59,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { EntrepriseService } from './entreprises/shared/entreprise.service';
 import { CategorieService } from './categories/shared/categorie.service';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+<<<<<<< HEAD
 import { ChatsComponent } from './chats/chats.component';
 import { ChatListComponent } from './chats/chat-list/chat-list.component';
 import { ChatComponent } from './chats/chat/chat.component';
@@ -72,6 +73,17 @@ import { SlaComponent } from './slas/sla/sla.component';
 import { SlaListComponent } from './slas/sla-list/sla-list.component';
 import { SlasComponent } from './slas/slas.component';
 import { SlaService } from './slas/shared/Sla.service';
+=======
+import { ChatComponent } from './chat/chat.component';
+import { ChatDiscussionComponent } from './chat/chat-discussion/chat-discussion.component';
+import { ChatMessageComponent } from './chat/chat-message/chat-message.component';
+import { ProjetsComponent } from './projets/projets.component';
+import { ProjetComponent } from './projets/projet/projet.component';
+import { ProjetListComponent } from './projets/projet-list/projet-list.component';
+import { ElementsslasComponent } from './elementsslas/elementsslas.component';
+import { ElementslaListComponent } from './elementsslas/elementsla-list/elementsla-list.component';
+import { ElementslaComponent } from './elementsslas/elementsla/elementsla.component';
+>>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
 
 
@@ -122,6 +134,7 @@ import { SlaService } from './slas/shared/Sla.service';
     ChatsComponent,
     ChatListComponent,
     ChatComponent,
+<<<<<<< HEAD
     PrivilegeListComponent,
     ProjetListComponent,
     ProjetComponent,
@@ -129,6 +142,16 @@ import { SlaService } from './slas/shared/Sla.service';
     SlaComponent,
     SlaListComponent,
     SlasComponent
+=======
+    ChatDiscussionComponent,
+    ChatMessageComponent,
+    ProjetsComponent,
+    ProjetComponent,
+    ProjetListComponent,
+    ElementsslasComponent,
+    ElementslaListComponent,
+    ElementslaComponent
+>>>>>>> d5d9a42797dd76b5370b74f712d824e50380544e
 
   ],
   imports: [
