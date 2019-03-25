@@ -1,63 +1,98 @@
+
 <div class="form-wrapper md-elevation-8 p-8">
-<form #form="ngForm" (submit)="onSubmit(form)" enctype="multipart/form-data" autocomplete="off">
-  <!-- <div class="title mt-4 mb-8"><h3>Ajouter une requete</h3></div>-->
-  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
-
-  <div class="form-group">
-    <label>Projet</label>
-    <select name="projet_id" #projet_id="ngModel" [(ngModel)]="service.formData.projet_id" class="form-control">
+  <form #form="ngForm" (submit)="onSubmit(form)" enctype="multipart/form-data" autocomplete="off">
+    <!-- <div class="title mt-4 mb-8"><h3>Ajouter une requete</h3></div>-->
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   
-      <option *ngFor="let emp1 of servicecategorie.list" value=" {{emp1.id}}">
-        {{emp1.nom}}
-      </option>
-      <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">This field is required.</div>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>SLA concerner</label>
-    <select name="sla_id" #sla_id="ngModel" [(ngModel)]="service.formData.sla_id" class="form-control col-9 ">
+    <div class="form-group">
+      <label>Projet</label>
+      <select name="projet_id" #projet_id="ngModel" [(ngModel)]="service.formData.projet_id" class="form-control">
+    
+        <option *ngFor="let emp1 of servicecategorie.list" value=" {{emp1.id}}">
+          {{emp1.nom}}
+        </option>
+        <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">This field is required.</div>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>SLA concerner</label>
+      <select name="sla_id" #sla_id="ngModel" [(ngModel)]="service.formData.sla_id" class="form-control col-9 ">
+    
+        <option *ngFor="let emp of categories.list" value=" {{emp.id}}">
+          {{emp.intitule}}
+        </option>
+        <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">This field is required.</div>
+      </select>
   
-      <option *ngFor="let emp of categories.list" value=" {{emp.id}}">
-        {{emp.intitule}}
-      </option>
-      <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">This field is required.</div>
-    </select>
-
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" style="padding-right: 15px">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2"(click)="issla()" name="isSLA" #isSLA="ngModel" [(ngModel)]="service.formData.isSLA">
-            <span class="checkbox-icon fuse-ripple-ready"></span>
-            <span class="form-check-description">Autre</span>
-        </label>
-      
+      <div class="form-check form-check-inline">
+          <label class="form-check-label" style="padding-right: 15px">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2"(click)="issla()" name="isSLA" #isSLA="ngModel" [(ngModel)]="service.formData.isSLA">
+              <span class="checkbox-icon fuse-ripple-ready"></span>
+              <span class="form-check-description">Autre</span>
+          </label>
+        
+        </div>
+    </div>
+    
+    <div  *ngIf="sla"class="form-group">
+        <label>Titre</label>
+      <input name="titre" #titre="ngModel" [(ngModel)]="service.formData.titre" class="form-control" required>
+      <div class="validation-error" *ngIf="titre.invalid && titre.touched">Ce champ est requis.</div>
+    </div>
+    
+    <div class="form-group">
+        <label>Contenu</label>
+        <input type="text" name="contenu" #contenu="ngModel" [(ngModel)]="service.formData.contenu" class="form-control" required>
+        <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">Ce champ est requis.</div>
       </div>
-  </div>
   
-  <div  *ngIf="sla"class="form-group">
-      <label>Titre</label>
-    <input name="titre" #titre="ngModel" [(ngModel)]="service.formData.titre" class="form-control" required>
-    <div class="validation-error" *ngIf="titre.invalid && titre.touched">Ce champ est requis.</div>
-  </div>
-  
-  <div class="form-group">
-      <label>Contenu</label>
-      <input type="text" name="contenu" #contenu="ngModel" [(ngModel)]="service.formData.contenu" class="form-control" required>
-      <div class="validation-error" *ngIf="contenu.invalid && contenu.touched">Ce champ est requis.</div>
-    </div>
+      
+      
+      <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit()">
+      
+          
+        <br>
+        <input formControlName="document" type="file" ng2FileSelect accept=".png" [uploader]="uploader" multiple/><br/>
+        <br>
+        <div class="drop-zone">
+        <div ng2FileDrop [uploader]="uploader" class="drop-zone">
+           Drag and drop files to upload
+        </div>
+        </div>
+        <table>
+          <thead>
+          <tr>
+            <th width="90%">
+              File Name
+            </th>
+            <th width="10%">
+              Remove
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of uploader.queue">
+            <th width="90%">
+              {{ item.file.name}}({{item.file.size/1000000}} MB)
+            </th>
+            <th class="text-center" width="10%">
+              <button (click)="item.remove()">delete</button>
+            </th>
+          </tr>
+          </tbody>
+        </table>
+        <br>
+        <button hidden #but mat-raised-button color="accent" (click)="item.isClickable ? item.onClick() : return;"  type="submit">Upload Data</button>
+     
+    </form>
 
-    <label class="image-upload-container btn btn-bwm">
-      <span>Select Image</span>
-      <input #imageInput
-             type="file"
-             multiple
-             accept="image/*"
-             >
-             <input type="hidden" name="image" #image="ngModel" value="{{imageService.nom}}" [(ngModel)]="service.formData.image">
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
+          <button type="submit"  class="btn btn-primary fuse-ripple-ready"  (click)="but.click()">Enregistrer </button>
+      </div>
+  </form>
+  </div>
   
-    </label>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary fuse-ripple-ready" data-dismiss="modal">Fermer</button>
-        <button type="submit" [disabled]="form.invalid" class="btn btn-primary fuse-ripple-ready" onclick="$('.modal').modal('hide')"  (click)="processFile(imageInput)">Enregistrer </button>
-    </div>
-</form>
-</div>
+
+
+

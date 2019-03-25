@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Entreprise } from './entreprise.model';
 import { HttpClient } from "@angular/common/http";
+import { ajax } from 'rxjs/ajax';
 
 @Injectable({
   providedIn: 'root'})
@@ -15,6 +16,10 @@ export class EntrepriseService {
   postEntreprise(formData : Entreprise){
    return this.http.post(this.rootURL+'/Entreprise',formData);
     
+  }
+
+  uploadImage(formData) {
+    return ajax.post(`${this.rootURL}/upload`, formData);
   }
 
   refreshList(){

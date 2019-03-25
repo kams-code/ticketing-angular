@@ -72,7 +72,8 @@ import { SlaComponent } from './slas/sla/sla.component';
 import { SlaListComponent } from './slas/sla-list/sla-list.component';
 import { SlasComponent } from './slas/slas.component';
 import { SlaService } from './slas/shared/Sla.service';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 
 
@@ -128,16 +129,23 @@ import { SlaService } from './slas/shared/Sla.service';
     ProjetsComponent,
     SlaComponent,
     SlaListComponent,
-    SlasComponent
+    SlasComponent,
+    FileSelectDirective,
+    FileDropDirective
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     SnotifyModule
   ],
+  exports: [
+    FileSelectDirective,
+    FileDropDirective
+ ],
   providers: [SlaService,ProjetService,PrivilegeService, CategorieService,EntrepriseService,RoleService, PostService, DiscussionService, RequeteService,
      ClientService, UserService, JarwisService, ToastrService, TokenService,
      AuthService, AfterLoginService, BeforeLoginService,
