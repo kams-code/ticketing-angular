@@ -1,15 +1,7 @@
-<!--<table class="table table-hover">
-  <tr *ngFor="let emp of service.list">
-   <td (click)="populateForm(emp)">{{emp.body}}</td>
-   <td (click)="populateForm(emp)">{{emp.utilisateur}}</td>
-    <td><button (click)="onDelete(emp.id)" class="btn btn-sm btn-outline-danger">X</button></td>
-  </tr>
-</table>-->
-
 <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" style="z-index: 9999999999;">
       <div class="modal-content">
-         <app-post></app-post>
+         <app-elementssla></app-elementssla>
 
       </div>
   </div>
@@ -35,8 +27,8 @@
                                           <i class="icon-cube-outline s-6"></i>
                                       </div>
                                       <div class="logo-text">
-                                          <div class="h4">Posts</div>
-                                          <div class="">Total des posts: 20</div>
+                                          <div class="h4">elementsslas</div>
+                                          <div class="">Total elementsslas: 20</div>
                                       </div>
                                   </div>
 
@@ -63,7 +55,7 @@
                           </div>
                      <div style="text-align: right">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
-                           ajouter un post
+                            ajouter un elementssla
                              </button>
                      </div>
 
@@ -77,18 +69,40 @@
                                   <thead>
                                       <tr>
 
+
                                           <th>
                                             <div class="table-header">
-                                                <span class="column-title">utilisateur</span>
+                                                <span class="column-title">Nom</span>
                                             </div>
                                         </th>
 
                                           <th>
                                               <div class="table-header">
-                                                  <span class="column-title">contenu</span>
+                                                  <span class="column-title">Degre</span>
                                               </div>
                                           </th>
 
+                                          <th>
+                                            <div class="table-header">
+                                                <span class="column-title">Telephone</span>
+                                            </div>
+                                        </th>
+
+                                          <th>
+                                              <div class="table-header">
+                                                  <span class="column-title">Email</span>
+                                              </div>
+                                          </th>
+                                          <th>
+                                            <div class="table-header">
+                                                <span class="column-title">Site</span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                          <div class="table-header">
+                                              <span class="column-title">Secteur d'activite</span>
+                                          </div>
+                                      </th>
 
                                           <th>
                                               <div class="table-header">
@@ -102,10 +116,14 @@
 
                                       <tr *ngFor="let emp of service.list" >
 
-                                        <td
-                                      (click)="populateForm(emp)">{{emp.user_id}}</td>
-                                        <td (click)="populateForm(emp)">{{emp.body}}</td>
 
+                                          <td (click)="populateForm(emp)">{{emp.logo}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.nom}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.siege}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.telephone}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.email}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.site}}</td>
+                                          <td (click)="populateForm(emp)">{{emp.secteuractivite}}</td>
                                           <td>
                                               <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">
                                                   <i class="icon icon-close s-4"></i>
@@ -113,7 +131,6 @@
                                               <button type="button" (click)="populateForm(emp)" class="btn btn-icon" data-toggle="modal" data-target="#exampleModalLive">
                                                 <i class="icon icon-pencil s-4"></i>
                                               </button>
-
                                           </td>
                                       </tr>
                                   </tbody>

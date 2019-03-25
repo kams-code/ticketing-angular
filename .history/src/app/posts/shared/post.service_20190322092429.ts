@@ -32,6 +32,5 @@ export class PostService {
     console.log(this.http.delete(this.rootURL+'/chatter_post/'+id));
     return this.http.delete(this.rootURL+'/chatter_post/'+id);
    }
-
   
 }

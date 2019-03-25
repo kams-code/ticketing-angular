@@ -62,6 +62,12 @@ import { EntreprisesComponent } from './entreprises/entreprises.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatDiscussionComponent } from './chat/chat-discussion/chat-discussion.component';
 import { ChatMessageComponent } from './chat/chat-message/chat-message.component';
+import { ProjetsComponent } from './projets/projets.component';
+import { ProjetComponent } from './projets/projet/projet.component';
+import { ProjetListComponent } from './projets/projet-list/projet-list.component';
+import { ElementsslasComponent } from './elementsslas/elementsslas.component';
+import { ElementslaListComponent } from './elementsslas/elementsla-list/elementsla-list.component';
+import { ElementslaComponent } from './elementsslas/elementsla/elementsla.component';
 
 
 
@@ -111,7 +117,13 @@ import { ChatMessageComponent } from './chat/chat-message/chat-message.component
     CategoriesComponent,
     ChatComponent,
     ChatDiscussionComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    ProjetsComponent,
+    ProjetComponent,
+    ProjetListComponent,
+    ElementsslasComponent,
+    ElementslaListComponent,
+    ElementslaComponent
 
   ],
   imports: [

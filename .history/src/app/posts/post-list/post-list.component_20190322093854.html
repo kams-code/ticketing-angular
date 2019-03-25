@@ -102,9 +102,9 @@
 
                                       <tr *ngFor="let emp of service.list" >
 
-                                        <td
-                                      (click)="populateForm(emp)">{{emp.user_id}}</td>
+                                        <td (click)="populateForm(emp)">{{emp.user_id}}</td>
                                         <td (click)="populateForm(emp)">{{emp.body}}</td>
+
 
                                           <td>
                                               <button type="button" (click)="onDelete(emp.id)" class="btn btn-icon" aria-label="Product details">

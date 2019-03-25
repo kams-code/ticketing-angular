@@ -103,7 +103,9 @@
                                       <tr *ngFor="let emp of service.list" >
 
                                         <td
-                                      (click)="populateForm(emp)">{{emp.user_id}}</td>
+                                        *ngFor="let emp1 of UserService.list"
+                                        *
+                                        (click)="populateForm(emp)">{{emp.user_id}}</td>
                                         <td (click)="populateForm(emp)">{{emp.body}}</td>
 
                                           <td>

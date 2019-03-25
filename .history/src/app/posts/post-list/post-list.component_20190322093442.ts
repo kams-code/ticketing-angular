@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../shared/post.service';
 import { Post } from '../shared/post.model';
-import { UserService} from '../../users/shared/user.service';
-
 
 @Component({
   selector: 'app-post-list',
@@ -22,7 +20,7 @@ export class PostListComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    if (confirm('est-vous sur de vouloir supprimer ce post?')) {
+    if (confirm('est-vous sur de vouloir supprimer ?')) {
       this.service.deletePost(id).subscribe(res => {
         this.service.refreshList();
       });

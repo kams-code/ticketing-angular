@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../shared/post.service';
 import { Post } from '../shared/post.model';
-import { UserService} from '../../users/shared/user.service';
+import { UserService} from '../../users/shared'
 
 
 @Component({

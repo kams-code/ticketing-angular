@@ -33,5 +33,5 @@ export class PostService {
     return this.http.delete(this.rootURL+'/chatter_post/'+id);
    }
 
-  
+   getUser(){}
 }
